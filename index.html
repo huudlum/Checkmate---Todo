@@ -4,16 +4,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Checkmate</title>
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="">
 </head>
 
 <body>
-  
+<div class="container">
+  <h2>Checkmate</h2>
+  <p>A Simple, Web-based To-do List</p>
+  <div class="row">
+    <input type="text" placeholder="Enter Your Task" id="inputBox">
+    <button onclick="addTask()">Add</button>
+  </div>
+  <ul id="list-container">
+  </ul>
 
 
-  <script src="app.js"></script>
+</div>
+
+<!--Footer area with external links-->
+<footer class="footer"> Created by <a href="https://danhobbs.glitch.me"> Dan Hobbs</a> |
+  Hosted by <a href="https://glitch.com"> Glitch</a> |
+  <a href="#">See the code</a>
+</footer>
+
+<script src="app.js"></script>
 
 </body>
 
