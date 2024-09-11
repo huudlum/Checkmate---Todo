@@ -1,9 +1,11 @@
 const inputBox = document.getElementById("inputBox");
 const listContainer = document.getElementById("list-container");
+var enter = document.getElementById("inputBox");
+var save = document.getElementById("save")
 
 function addTask(){
-    if (inputBox.value === ''){
-        alert("You Must Enter Some Task");
+    if (inputBox.value.trim() === ''){
+        alert("Please enter a task");
     }
     else{
         let li =document.createElement("li");
@@ -12,6 +14,7 @@ function addTask(){
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
+        save.classList.add("show-save");
     }
     inputBox.value = "";
     saveData();
@@ -35,3 +38,9 @@ function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
+enter.addEventListener("keypress", function(event) {
+    if (event.key === "Enter" && inputBox.value !== ''){
+        event.preventDefault();
+        document.getElementById("addTaskBtn").click();
+    }
+});
